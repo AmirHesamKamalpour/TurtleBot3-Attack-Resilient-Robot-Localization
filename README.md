@@ -30,7 +30,7 @@ This project was jointly developed by:
 
 Both authors collaboratively contributed to the design, implementation, and development of this project.
 
-<p align="center">
+<p align="left">
   <img
     src="https://thumb.wikimedia.org/wikipedia/en/thumb/f/fd/University_of_Tehran_logo.svg/1280px-University_of_Tehran_logo.svg.png"
     alt="University of Tehran"
