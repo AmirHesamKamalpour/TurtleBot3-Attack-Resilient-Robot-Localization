@@ -24,7 +24,6 @@
 ## Contents
 
 - [Highlights](#highlights)
-- [System architecture](#system-architecture)
 - [Attack scenarios and recovery](#attack-scenarios-and-recovery)
 - [Results and visualizations](#results-and-visualizations)
 - [Repository layout](#repository-layout)
@@ -47,31 +46,6 @@
 - **Adaptive recovery:** performs radius-limited, potentially scan-guided search after local disturbances, and map-wide reinitialization after teleportation.
 - **Experiment observability:** publishes particle poses, estimated/ground-truth paths, convergence state, filter statistics, and time-series CSV logs.
 - **Autonomous exploration helper:** publishes safe-ish wandering commands with front-obstacle avoidance to stimulate localization (not a full navigation stack).
-
-## System architecture
-
-```mermaid
-flowchart TD
-    M["Known occupancy map<br/>explore_house.yaml + .pgm"] --> F[Map model and distance field]
-    O["/odom_manipulated"] --> P[Odometry motion update]
-    S["/scan_manipulated"] --> L[LiDAR likelihood evaluation]
-    V["/cmd_vel"] --> D[Sensor-consistency attack detector]
-    O --> D
-    S --> D
-    F --> L
-    P --> PF[Monte Carlo particle filter]
-    L --> PF
-    D --> R{Detected mode}
-    R -->|1: blind LiDAR| RL[Local recovery after scan returns]
-    R -->|2: frozen odometry| RL2[Scan-guided local recovery]
-    R -->|3: teleportation| RG[Global particle reinitialization]
-    RL --> PF
-    RL2 --> PF
-    RG --> PF
-    PF --> RS[Adaptive resampling + MCMC move]
-    RS --> E[Pose, particles, convergence, metrics]
-    E --> RV[RViz2 + ROS topics + CSV]
-```
 
 The filter estimates planar robot pose **(x, y, yaw)**. Its core update sequence is:
 
