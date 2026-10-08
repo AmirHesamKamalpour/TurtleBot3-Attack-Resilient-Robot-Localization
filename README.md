@@ -19,7 +19,7 @@
 </p>
 
 > [!IMPORTANT]
-> **Repository scope.** This archive contains the implemented `lidar_analysis_py` ROS 2 package and the experimental report, but **not** the house map, TurtleBot3 simulation packages, explorer launch package, or hijacking simulator/referee. Full end-to-end reproduction requires those external course/simulation components. See [Prerequisites](#prerequisites) and [Known limitations](#known-limitations).
+> **Repository scope.** This archive contains the implemented `lidar_analysis_py` ROS 2 package, but **not** the house map, TurtleBot3 simulation packages, explorer launch package, or hijacking simulator/referee. Full end-to-end reproduction requires those external course/simulation components. See [Prerequisites](#prerequisites) and [Known limitations](#known-limitations).
 
 ## Contents
 
@@ -113,12 +113,6 @@ The separately supplied comparison figure contains the following **example-run m
 | Mode 1 — Blind push | **50.67 s** | **1.27 m** |
 | Mode 2 — Lifted robot | **23.11 s** | **0.65 m** |
 | Mode 3 — Teleportation | **95.38 s** | **Entire map** |
-
-### Results recorded in the included report
-
-The bundled `report.pdf` documents another experimental record: **22.13 s** to initial convergence; recovery in **22.70 s** (Mode 1, 0.79 m radius), **22.60 s** (Mode 2, 0.46 m radius), and **24.07 s** (Mode 3, global scope).
-
-> **Measurement provenance:** The supplied comparison plot and the PDF report contain **different measured values**. Their run configurations and timing conditions are not fully reconciled in the supplied materials. They are shown separately here—**not** pooled, averaged, or presented as independently reproduced benchmark results.
 
 ## Repository layout
 
@@ -383,7 +377,6 @@ The included LiDAR helper nodes (`lidar_subscriber`, `lidar_noise_node`) are sep
 - [colcon documentation — building and sourcing a workspace](https://colcon.readthedocs.io/en/released/user/what-is-a-workspace.html)
 - [ROS 2 navigation messages (`nav_msgs`)](https://docs.ros.org/en/ros2_packages/humble/api/nav_msgs/index.html)
 - [ROS 2 TF2 static transform broadcaster](https://github.com/ros2/ros2_documentation/blob/rolling/source/ROS-Framework/client-libraries/Working-with-Client-Libraries/Tf2/Writing-A-Tf2-Static-Broadcaster-Cpp.rst)
-- **Project source materials:** `report.pdf`, `README.txt`, and the Python code within `lidar_analysis/`.
 
 ---
 
