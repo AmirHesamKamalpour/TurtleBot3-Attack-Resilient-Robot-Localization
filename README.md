@@ -11,15 +11,6 @@
   <img alt="Language" src="https://img.shields.io/badge/Language-Python%203-3776AB?logo=python&logoColor=white" />
 </p>
 
-## Authors & Contributors
-
-This project was jointly developed by:
-
-- **[Aida roshani](https://github.com/Aaidaro)**
-- **[AmirHesam Kamalpour](https://github.com/AmirHesamKamalpour)**
-
-Both authors collaboratively contributed to the design, implementation, and development of this project.
-
 **Hijack-Resilient Monte Carlo Localization** is a ROS 2 research project that enables a simulated TurtleBot3 to **detect localization attacks and recover its position** using only its manipulated LiDAR/odometry streams and commanded motion. The localization backbone is a **Monte Carlo particle filter** with a likelihood-field sensor model and a **Metropolis–Hastings (MCMC) resample–move step**. An attack-aware state machine selects **local** or **global relocalization** according to the detected failure mode.
 
 <p align="center">
@@ -29,6 +20,15 @@ Both authors collaboratively contributed to the design, implementation, and deve
 
 > [!IMPORTANT]
 > **Repository scope.** This archive contains the implemented `lidar_analysis_py` ROS 2 package, but **not** the house map, TurtleBot3 simulation packages, explorer launch package, or hijacking simulator/referee. Full end-to-end reproduction requires those external course/simulation components. See [Prerequisites](#prerequisites) and [Known limitations](#known-limitations).
+
+## Authors & Contributors
+
+This project was jointly developed by:
+
+- **[Aida roshani](https://github.com/Aaidaro)**
+- **[AmirHesam Kamalpour](https://github.com/AmirHesamKamalpour)**
+
+Both authors collaboratively contributed to the design, implementation, and development of this project.
 
 ## Contents
 
